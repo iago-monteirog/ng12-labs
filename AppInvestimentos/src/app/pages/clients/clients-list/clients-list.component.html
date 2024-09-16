@@ -22,12 +22,12 @@
     </thead>
 
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Nome</td>
-        <td>Email</td>
+      <tr *ngFor="let client of listClients">
+        <td>{{client.id}}</td>
+        <td>{{client.nome}}</td>
+        <td>{{client.email}}</td>
         <td>
-          <a class="btn btn-sm btn-primary">
+          <a routerLink="clients/view/{{client.id}}" class="btn btn-sm btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill"
               viewBox="0 0 16 16">
               <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -37,7 +37,7 @@
 
           &nbsp;
 
-          <a class="btn btn-sm btn-warning">
+          <a routerLink="clients/edit/{{client.id}}" class="btn btn-sm btn-warning">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-pencil-square" viewBox="0 0 16 16">
               <path
@@ -49,7 +49,8 @@
 
           &nbsp;
 
-          <button class="btn btn-sm btn-danger" type="button">
+          <button *ngIf="client.id !== null && client.id !== undefined" (click)="removeClient(client.id)"
+            class="btn btn-sm btn-danger" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
               viewBox="0 0 16 16">
               <path
