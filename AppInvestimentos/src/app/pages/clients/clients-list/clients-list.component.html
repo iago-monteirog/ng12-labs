@@ -23,10 +23,10 @@
 
     <tbody>
       <tr *ngFor="let client of listClients">
-        <td>{{client.id}}</td>
-        <td>{{client.nome}}</td>
-        <td>{{client.email}}</td>
-        <td>
+        <td class="text-center">{{client.id}}</td>
+        <td class="text-center">{{client.name}}</td>
+        <td class="text-center">{{client.email}}</td>
+        <td class="text-center">
           <a routerLink="clients/view/{{client.id}}" class="btn btn-sm btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill"
               viewBox="0 0 16 16">

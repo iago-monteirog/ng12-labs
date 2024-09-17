@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './security/auth.interceptor';
+import { AuthGuard } from './security/auth.guard';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AuthInterceptor } from './security/auth.interceptor';
     HttpClientModule
   ],
   providers: [
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
