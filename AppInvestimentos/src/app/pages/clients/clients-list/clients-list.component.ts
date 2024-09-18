@@ -23,4 +23,8 @@ export class ClientsListComponent implements OnInit {
     console.log('Remover client de id: ' , clientId)
   }
 
+  public updateList($event: Client) {
+    this.listClients.push($event)
+  }
+
 }
