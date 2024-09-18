@@ -34,7 +34,7 @@ export class LoginService {
     localStorage.setItem(environment.token, token)
   }
 
-  private removeTokenLocalStorage() {
+  public removeTokenLocalStorage() {
     localStorage.removeItem(environment.token)
   }
 

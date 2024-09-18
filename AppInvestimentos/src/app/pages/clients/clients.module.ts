@@ -5,12 +5,14 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { ClientsListComponent } from './clients-list/clients-list.component';
 import { ClientsNewComponent } from './clients-new/clients-new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClientsEditComponent } from './clients-edit/clients-edit.component';
 
 
 @NgModule({
   declarations: [
     ClientsListComponent,
-    ClientsNewComponent
+    ClientsNewComponent,
+    ClientsEditComponent
   ],
   imports: [
     CommonModule,

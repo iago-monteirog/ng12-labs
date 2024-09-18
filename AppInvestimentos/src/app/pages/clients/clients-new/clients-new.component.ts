@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClientsService } from '../shared/clients.service';
-import { Client } from '../shared/client.model';
+import { Client } from '../shared/client.modal';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

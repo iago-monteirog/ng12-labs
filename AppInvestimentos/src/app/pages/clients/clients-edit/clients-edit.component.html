@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h3>Atualizar Cliente</h3>
+    <button class="btn btn-sm btn-secondary" routerLink="/clients">VOLTAR</button>
+  </div>
+
+  <form [formGroup]="formClient" (ngSubmit)="updateClient()">
+    <div class="mb-3">
+      <label for="" class="form-label">ID</label>
+      <input type="text" readonly class="form-control" formControlName="id">
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Nome</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary">SALVAR</button>
+    </div>
+  </form>
+</div>

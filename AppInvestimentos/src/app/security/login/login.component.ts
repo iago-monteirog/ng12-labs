@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    const token = this.loginService.getToken();
+
+    if (token) {
+      this.loginService.removeTokenLocalStorage();
+    }
   }
 
   public criarFormLogin(): FormGroup {

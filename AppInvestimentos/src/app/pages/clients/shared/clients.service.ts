@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { environment } from "src/environments/environment";
-import { Client } from "./client.model";
+import { Client } from "./client.modal";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,14 @@ export class ClientsService {
     )
   }
 
+  public updateClient(client: Client): Observable<Client> {
+    const url = `${environment.baseUrlBackend}/clients/${client.id}`;
+
+    return this.http.put(url, client).pipe(
+      map(this.mapToClient)
+    )
+  }
+
   private mapToClients(data: any): Array<Client> {
     const listClients: Client[] = [];
 
@@ -40,6 +48,14 @@ export class ClientsService {
     
     return (Object.assign(new Client, data));
 
+  }
+
+  public listById(id: number): Observable<Client> {
+    const url = `${environment.baseUrlBackend}/clients/${id}`;
+
+    return this.http.get(url).pipe(
+      map(this.mapToClient)
+    )
   }
 
 }
