@@ -36,6 +36,12 @@ export class ClientsService {
     )
   }
 
+  public delete(clientId: number): Observable<any> {
+    const url = `${environment.baseUrlBackend}/clients/${clientId}`;
+
+    return this.http.delete(url, { responseType: 'json' })
+  }
+
   private mapToClients(data: any): Array<Client> {
     const listClients: Client[] = [];
 
@@ -45,7 +51,7 @@ export class ClientsService {
   }
 
   private mapToClient(data: any): Client {
-    
+
     return (Object.assign(new Client, data));
 
   }
